@@ -63,3 +63,35 @@ class QuizGame:
         if self.best_score is None or score > self.best_score:
             self.best_score = score
             print("새로운 최고 점수입니다!")
+
+
+
+    def add_quiz(self):
+        """새로운 퀴즈를 입력받아 목록에 추가한다."""
+        from quiz import Quiz
+
+        print("\n========== 새 퀴즈 등록 ==========")
+
+        while True:
+            question = input("문제를 입력하세요: ").strip()
+            if question:
+                break
+            print("문제는 비워둘 수 없습니다.")
+
+        choices = []
+
+        for number in range(1, 5):
+            while True:
+                choice = input(f"{number}번 선택지: ").strip()
+                if choice:
+                    choices.append(choice)
+                    break
+                print("선택지는 비워둘 수 없습니다.")
+
+        answer = self.get_number("정답 번호 (1~4): ", 1, 4)
+
+        new_quiz = Quiz(question, choices, answer)
+        self.quizzes.append(new_quiz)
+
+        print("새로운 퀴즈가 등록되었습니다!")
+        print(f"현재 등록된 퀴즈: {len(self.quizzes)}개")

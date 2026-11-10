@@ -37,7 +37,7 @@ def main():
             elif choice == 1:
                 game.play_quiz()
             elif choice == 2:
-                print("퀴즈 추가 기능은 다음 단계에서 구현합니다.")
+                game.add_quiz()
             elif choice == 3:
                 print("퀴즈 목록 기능은 다음 단계에서 구현합니다.")
             elif choice == 4:
