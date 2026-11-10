@@ -1,6 +1,6 @@
 
 """퀴즈 게임의 진행과 점수를 관리하는 클래스."""
-
+import random
 from storage import load_state, save_state
 
 
@@ -38,9 +38,12 @@ class QuizGame:
 
         correct_count = 0
 
+        shuffled_quizzes = self.quizzes.copy()
+        random.shuffle(shuffled_quizzes)
+
         print(f"\n총 {len(self.quizzes)}문제를 시작합니다!")
 
-        for index, quiz in enumerate(self.quizzes, start=1):
+        for index, quiz in enumerate(shuffled_quizzes, start=1):
             print(f"\n[{index}/{len(self.quizzes)}]")
             quiz.display()
 
