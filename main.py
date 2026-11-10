@@ -39,7 +39,7 @@ def main():
             elif choice == 2:
                 game.add_quiz()
             elif choice == 3:
-                print("퀴즈 목록 기능은 다음 단계에서 구현합니다.")
+                game.show_quizzes()
             elif choice == 4:
                 print("최고 점수 확인 기능은 다음 단계에서 구현합니다.")
 

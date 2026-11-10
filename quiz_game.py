@@ -95,3 +95,18 @@ class QuizGame:
 
         print("새로운 퀴즈가 등록되었습니다!")
         print(f"현재 등록된 퀴즈: {len(self.quizzes)}개")
+
+
+
+    def show_quizzes(self):
+        """현재 등록된 퀴즈 목록을 보여준다."""
+        print("\n========== 퀴즈 목록 ==========")
+
+        if not self.quizzes:
+            print("등록된 퀴즈가 없습니다.")
+            return
+
+        for number, quiz in enumerate(self.quizzes, start=1):
+            print(f"\n{number}. {quiz.question}")
+
+        print(f"\n전체 퀴즈: {len(self.quizzes)}개")
