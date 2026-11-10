@@ -41,7 +41,7 @@ def main():
             elif choice == 3:
                 game.show_quizzes()
             elif choice == 4:
-                print("최고 점수 확인 기능은 다음 단계에서 구현합니다.")
+                game.show_best_score()
 
     except (KeyboardInterrupt, EOFError):
         print("\n입력이 중단되었습니다. 안전하게 종료합니다.")

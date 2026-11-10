@@ -110,3 +110,14 @@ class QuizGame:
             print(f"\n{number}. {quiz.question}")
 
         print(f"\n전체 퀴즈: {len(self.quizzes)}개")
+
+
+
+    def show_best_score(self):
+        """현재까지 기록된 최고 점수를 보여준다."""
+        print("\n========== 최고 점수 ==========")
+
+        if self.best_score is None:
+            print("아직 기록된 점수가 없습니다.")
+        else:
+            print(f"최고 점수: {self.best_score}점")
