@@ -1,15 +1,14 @@
 
 """퀴즈 게임의 진행과 점수를 관리하는 클래스."""
 
-from quiz_data import get_default_quizzes
+from storage import load_state, save_state
 
 
 class QuizGame:
     """퀴즈 게임 전체를 관리한다."""
 
     def __init__(self):
-        self.quizzes = get_default_quizzes()
-        self.best_score = None
+        self.quizzes, self.best_score = load_state()
 
     def get_number(self, message, minimum, maximum):
         """허용 범위의 정수를 입력받는다."""
@@ -63,7 +62,7 @@ class QuizGame:
         if self.best_score is None or score > self.best_score:
             self.best_score = score
             print("새로운 최고 점수입니다!")
-
+            save_state(self.quizzes, self.best_score)
 
 
     def add_quiz(self):
@@ -95,7 +94,7 @@ class QuizGame:
 
         print("새로운 퀴즈가 등록되었습니다!")
         print(f"현재 등록된 퀴즈: {len(self.quizzes)}개")
-
+        save_state(self.quizzes, self.best_score)
 
 
     def show_quizzes(self):
