@@ -130,3 +130,5 @@ python-quiz-game/
 ## 10. 프로젝트 목표
 
 Python의 클래스, 함수, 반복문, 조건문, 예외 처리와 JSON 파일 입출력을 직접 구현하고, Git을 이용해 코드 변경 이력을 관리하는 기초 개발 역량을 학습합니다.
+## Git Clone and Pull Practice
+This repository was cloned to a separate local folder to practice Git synchronization.
